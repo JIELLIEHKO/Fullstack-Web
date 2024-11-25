@@ -19,8 +19,7 @@ import { AuthorGuard } from '../guard/author.guard';
 
 @Controller('transactions')
 export class TransactionController {
-  constructor(private readonly transactionService: TransactionService) {
-  }
+  constructor(private readonly transactionService: TransactionService) {}
 
   @Post()
   @UsePipes(new ValidationPipe())
