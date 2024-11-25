@@ -80,7 +80,7 @@ const Categories: FC = () => {
         {/* Add Category */}
         <button
           onClick={() => setVisibleModal(true)}
-          className="mt-5 flex max-w-fit items-center gap-2 text-white/50 hoveer:text-white"
+          className="mt-5 flex max-w-fit items-center gap-2 text-white/50 hover:text-white"
         >
           <FaPlus />
           <span>Create a new category</span>
@@ -88,7 +88,9 @@ const Categories: FC = () => {
       </div>
 
       {/* Add Category Modal */}
-      {visibleModal && (<CategoryModal type="post" setVisibleModal={setVisibleModal} />)}
+      {visibleModal && (
+        <CategoryModal type="post" setVisibleModal={setVisibleModal} />
+      )}
 
       {/*  Edit Category Modal */}
       {visibleModal && isEdit && (
