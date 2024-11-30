@@ -17,12 +17,14 @@ const Header: FC = () => {
     removeTokenFromLocalStorage('token')
     toast.success('You logged out.')
     navigate('/')
+    window.location.reload()
   }
 
   return (
     <header className="flex items-center bg-slate-800 p-4 shadow-sm backdrop-blur-sm">
-      <Link to="/">
+      <Link className='flex items-center' to="/">
         <FaBtc size={20} />
+        <p className="mx-1 uppercase">Fintrack</p>
       </Link>
 
       {/* Menu */}

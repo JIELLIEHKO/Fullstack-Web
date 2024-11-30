@@ -23,13 +23,13 @@ const Auth: FC = () => {
         dispatch(login(data))
         toast.success('You logged id.')
         navigate('/')
+        window.location.reload()
       }
     } catch (err: any) {
       const error = err.response?.data.message;
       toast.error(error.toString());
     }
   };
-
   const registrationHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     try {
       e.preventDefault();
@@ -49,7 +49,6 @@ const Auth: FC = () => {
       <h1 className="mb-10 text-center text-xl">
         {isLogin ? 'Login' : 'Registration'}
       </h1>
-
       <form
         onSubmit={isLogin ? loginHandler : registrationHandler}
         className="mx-auto flex w-1/3 flex-col gap-5"
@@ -66,10 +65,8 @@ const Auth: FC = () => {
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
         />
-
         <button className="btn btn-green mx-auto">Submit</button>
       </form>
-
       <div className="mt-5 flex justify-center">
         {isLogin ? (
           <button
